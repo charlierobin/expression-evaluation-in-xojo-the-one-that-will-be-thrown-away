@@ -62,7 +62,9 @@ The resulting list of `Instructions` is what can then be executed/evaluated. (An
 
 `var result as Variant = Evaluation.evaluate( instructions )`
 
-At this point, joy! We’re at the straightforward execution of a RPN sequence of `InstructionOperands` and `InstructionOperators`. 
+At this point, joy! We’re at the straightforward execution of a RPN sequence of `InstructionOperands` and `InstructionOperators`.
+
+(https://en.wikipedia.org/wiki/Reverse_Polish_notation)
 
 Operands are evaluated in order: strings and numbers go on the stack, sub-clauses are evaluated then result put on stack, function parameters each evaluated (as a sub-clause), results on stack, then the itself is function called, the result put on the stack, etc etc.
 
