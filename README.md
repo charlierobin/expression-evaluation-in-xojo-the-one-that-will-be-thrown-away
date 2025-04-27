@@ -54,7 +54,7 @@ Now go over the tokens, coverting to RPN (postfix) via the shunting yard algorit
 
 ## execution / evaluation
 
-List of tokens are converted to equivalent list of Instruction subclasses: `InstructionOperands` and `InstructionOperators` from `TokenOperands`/`TokenOperators`. Recursive creation of `InstructionOperandSubClauses` from `TokenOperandSubClause`. (Likewise for `TokenOperandFunctionCall` and `TokenOperandList`.)
+The list of tokens is converted to equivalent list of `Instruction` subclasses: `InstructionOperands` and `InstructionOperators` from `TokenOperands`/`TokenOperators`. Recursive creation of `InstructionOperandSubClauses` from `TokenOperandSubClause`. (Likewise for `TokenOperandFunctionCall` and `TokenOperandList`.)
 
 The `Token` class has a `asInstruction` which returns its equivalent `Instruction` (if applicable: as Tokens like brackets are parsed into sub-clause operands, there are no `InstructionBracket` equivalents to `TokenBracket`. Likewise, `TokenSymbol` are parsed out to either variable operands or function call operands, so there is no `InstructionSymbol`, only `InstructionOperandFunctionCall` and `InstructionOperandVariableLookUp`).
 
