@@ -24,19 +24,19 @@ The first tokenisation is just straightforwards looking at what's next in the st
 
 ## parsing passes
 
-## 1: parseUnaryMinusOperators
+### 1: parseUnaryMinusOperators
 
 `tokens = Evaluation.parseUnaryMinusOperators( tokens )`
 
 This passes over the list of tokens, identifying which minus/plus tokens are likely unary, and substituting them in the list of tokens.
 
-## 2: checkBalancedBrackets
+### 2: checkBalancedBrackets
 
 `Evaluation.checkBalancedBrackets( tokens )`
 
 Does a simple pass counting open and close brackets (both `()` and `[]`), checking that they match
 
-## 3: parseSymbolsFunctionsBrackets
+### 3: parseSymbolsFunctionsBrackets
 
 `tokens = Evaluation.parseSymbolsFunctionsBrackets( tokens )`
 
@@ -44,11 +44,13 @@ Go through the tokens identifying (1) bracketed sub-expressions, (2) function pa
 
 At this stage everthing is still infix.
 
-## 4: parseInfixToRPN
+### 4: parseInfixToRPN
 
 `tokens = Evaluation.parseInfixToRPN( tokens )`
 
 Now go over the tokens, coverting to RPN (postfix) via the shunting yard algorithm. `TokenOperandFunctionCall`, `TokenOperandList` and `TokenOperandSubClause` are all handled recursively.
+
+(I've made a mistake in the recursive descent of bracketed sub-expressions and function call arguments - it all works, so in that sense no problem, but looking over how I've handled the recursion in `parseInfixToRPN`, it's not quite how it should be.)
 
 ## execution / evaluation
 
@@ -76,7 +78,7 @@ At the moment the result comes back as Variant, and all evaluation is done with 
 
 Also, I want the result to come back with lots of other extra information: mainly what all the nested `InstructionOperandSubClauses`, `InstructionOperandFunctionCall` and `InstructionOperandList` evaluated to, so the host app can display all of this in the (sort of AST) structure of the formula to the user, allowing them to understand what they've written (and helping them debug if neccesary).
 
-
+I found a basic suite of test expressions which I've copied and pasted, plus a few extra of my own, and at the moment the results seem to come back correct. (At least the ones I’ve checked by pasting them in Google and seeing what their calculator returns.)
 
 
 
