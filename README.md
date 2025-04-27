@@ -1,7 +1,6 @@
 # expression evaluation in xojo: the one that will be thrown away
  
-The app intended for experimentation and then throwing away…
-
+Intended for experimentation and then throwing away…
 
 > In most projects, the first system built is barely usable… Hence plan to throw one away; you will, anyhow.
 
