@@ -4,11 +4,7 @@ The experiment intended for experimentation and then throwing away…
 
 > In most projects, the first system built is barely usable… Hence plan to throw one away; you will, anyhow.
 
-Fred Brooks, The Mythical Man-Month (https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
-
-
-
-
+> Fred Brooks, The Mythical Man-Month (https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 
 I'm working on a couple of apps which need to be able to tokenise, parse and evaluate Excel-type formulas/expressions.
 
@@ -49,6 +45,8 @@ At this stage everthing is still infix.
 `tokens = Evaluation.parseInfixToRPN( tokens )`
 
 Now go over the tokens, coverting to RPN (postfix) via the shunting yard algorithm. `TokenOperandFunctionCall`, `TokenOperandList` and `TokenOperandSubClause` are all handled recursively.
+
+(https://en.wikipedia.org/wiki/Shunting_yard_algorithm)
 
 (I've made a mistake in the recursive descent of bracketed sub-expressions and function call arguments - it all works, so in that sense no problem, but looking over how I've handled the recursion in `parseInfixToRPN`, it's not quite how it should be.)
 
