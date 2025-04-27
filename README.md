@@ -3,7 +3,7 @@
 The app intended for experimentation and then throwing away…
 
 
-`In most projects, the first system built is barely usable… Hence plan to throw one away; you will, anyhow.`
+> In most projects, the first system built is barely usable… Hence plan to throw one away; you will, anyhow.
 
 Fred Brooks, The Mythical Man-Month (https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 
