@@ -3,14 +3,13 @@
 The app intended for experimentation and then throwing away…
 
 > In most projects, the first system built is barely usable… Hence plan to throw one away; you will, anyhow.
-
 > Fred Brooks, The Mythical Man-Month (https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 
 (Or … Publish and be damned.)
 
 I'm working on some apps which need to be able to tokenise, parse and evaluate Excel-type formulas/expressions.
 
-This was my first pass at the problem. Hence there's plenty that will likely change, and plenty of TODOs scattered everywhere…
+This was my first take on the problem. Hence there's plenty that will likely change, and plenty of TODOs scattered everywhere…
 
 ## tokenisation
 
