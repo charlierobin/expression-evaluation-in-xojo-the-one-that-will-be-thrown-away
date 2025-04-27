@@ -54,11 +54,11 @@ The resulting list of `Instructions` is what can then be executed/evaluated. (An
 
 `var result as Variant = Evaluation.evaluate( instructions )`
 
-Straightforward execution of a RPN sequence of `InstructionOperands` and `InstructionOperators`. Operands are evaluated (strings and numbers go on the stack, sub-clauses evaluated then result put on stack, function parameters each evaluated as a sub-clause, results on stack, then function called, result on stack, etc etc). Operators get values off stack, evaluate, result back onto stack. 
+Straightforward execution of a RPN sequence of `InstructionOperands` and `InstructionOperators`. Operands are evaluated (strings and numbers go on the stack, sub-clauses evaluated then result put on stack, function parameters each evaluated as a sub-clause, results on stack, then function called, result on stack, etc etc). Operators pop values off stack, evaluate, push result back onto stack in the usual fasion.
 
 In a correct epxression, at the end, there will be only one value left on the stack: the end result.
 
-At the moment result comes back as Variant, and all evaluation is done with Xojo's inbuilt types. Which means there's lots of very ugly Variant handling scattered everywhere. I'll likely eventually change this to use my own `Value` class.
+At the moment the result comes back as Variant, and all evaluation is done with Xojo's inbuilt types. Which means there's lots of very ugly Variant handling scattered everywhere. I'll likely eventually change this to use my own `Value` class.
 
 Also, I want the result to come back with lots of other extra information: mainly what all the nested `InstructionOperandSubClauses`, `InstructionOperandFunctionCall` and `InstructionOperandList` evaluated to, so the host app can display all of this in the (sort of AST) structure of the formula to the user, allowing them to understand what they've written (and helping them debug if neccesary).
 
