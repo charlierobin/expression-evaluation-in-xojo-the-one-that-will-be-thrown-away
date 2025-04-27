@@ -6,9 +6,11 @@ The app intended for experimentation and then throwing away…
 
 > Fred Brooks, The Mythical Man-Month (https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 
-I'm working on a couple of apps which need to be able to tokenise, parse and evaluate Excel-type formulas/expressions.
+(Or … Publish and be damned.)
 
-So this was my first pass at the problem. Hence there's plenty that will likely change, and plenty of TODOs scattered everywhere…
+I'm working on some apps which need to be able to tokenise, parse and evaluate Excel-type formulas/expressions.
+
+This was my first pass at the problem. Hence there's plenty that will likely change, and plenty of TODOs scattered everywhere…
 
 ## tokenisation
 
