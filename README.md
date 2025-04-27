@@ -1,6 +1,6 @@
 # expression evaluation in xojo: the one that will be thrown away
  
-The experiment intended for experimentation and then throwing away…
+The app intended for experimentation and then throwing away…
 
 > In most projects, the first system built is barely usable… Hence plan to throw one away; you will, anyhow.
 
@@ -80,5 +80,6 @@ Also, I want the result to come back with lots of other extra information: mainl
 
 I found a basic suite of test expressions which I've copied and pasted, plus a few extra of my own, and at the moment the results seem to come back correct. (At least the ones I’ve checked by pasting them in Google and seeing what their calculator returns.)
 
+![ideas](https://github.com/user-attachments/assets/8991dcdf-d381-414e-862b-d2443021f0c6)
 
-
+PDF: [ideas.pdf](https://github.com/user-attachments/files/19930565/ideas.pdf)
