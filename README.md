@@ -46,15 +46,21 @@ Now go over the tokens, coverting to RPN (postfix) via the shunting yard algorit
 
 List of tokens are converted to equivalent list of Instruction subclasses: `InstructionOperands` and `InstructionOperators` from `TokenOperands`/`TokenOperators`. Recursive creation of `InstructionOperandSubClauses` from `TokenOperandSubClause`. (Likewise for `TokenOperandFunctionCall` and `TokenOperandList`.)
 
+The `Token` class has a `asInstruction` which returns its equivalent `Instruction` (if applicable: as Tokens like brackets are parsed into sub-clause operands, there are no `InstructionBracket` equivalents to `TokenBracket`. Likewise, `TokenSymbol` are parsed out to either variable operands or function call operands, so there is no `InstructionSymbol`, only `InstructionOperandFunctionCall` and `InstructionOperandVariableLookUp`).
+
 `var instructions as Instructions = tokens.asInstructions()`
 
 The resulting list of `Instructions` is what can then be executed/evaluated. (And also cached, so if an expression/formula string remains unchanged, it does not need to be re-compiled if re-executed.)
 
 `var result as Variant = Evaluation.evaluate( instructions )`
 
-At the moment result comes back as Variant, and all evaluation is done with Xojo's inbuilt types. Which means there's lots of vry ugly Variant handling scattered everywhere. I'll likely eventually change this to use my own `Value` class.
+Straightforward execution of a RPN sequence of `InstructionOperands` and `InstructionOperators`. Operands are evaluated (strings and numbers go on the stack, sub-clauses evaluated then result put on stack, function parameters each evaluated as a sub-clause, results on stack, then function called, result on stack, etc etc). Operators get values off stack, evaluate, result back onto stack. 
 
-Also, I want the result to come back with lots of other extra information: mainly what all the nested `InstructionOperandSubClauses`, `TokenOperandFunctionCall` and `TokenOperandList` evaluated to, so the host app can display all of this in the (sort of AST) structure of the formula to the user, allowing them to understand what they've written (and helping them debug if neccesary).
+In a correct epxression, at the end, there will be only one value left on the stack: the end result.
+
+At the moment result comes back as Variant, and all evaluation is done with Xojo's inbuilt types. Which means there's lots of very ugly Variant handling scattered everywhere. I'll likely eventually change this to use my own `Value` class.
+
+Also, I want the result to come back with lots of other extra information: mainly what all the nested `InstructionOperandSubClauses`, `InstructionOperandFunctionCall` and `InstructionOperandList` evaluated to, so the host app can display all of this in the (sort of AST) structure of the formula to the user, allowing them to understand what they've written (and helping them debug if neccesary).
 
 
 
