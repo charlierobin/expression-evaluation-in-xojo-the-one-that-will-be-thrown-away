@@ -62,7 +62,13 @@ The resulting list of `Instructions` is what can then be executed/evaluated. (An
 
 `var result as Variant = Evaluation.evaluate( instructions )`
 
-Straightforward execution of a RPN sequence of `InstructionOperands` and `InstructionOperators`. Operands are evaluated (strings and numbers go on the stack, sub-clauses evaluated then result put on stack, function parameters each evaluated as a sub-clause, results on stack, then function called, result on stack, etc etc). Operators pop values off stack, evaluate, push result back onto stack in the usual fasion.
+At this point, joy! We’re at the straightforward execution of a RPN sequence of `InstructionOperands` and `InstructionOperators`. 
+
+Operands are evaluated in order: strings and numbers go on the stack, sub-clauses are evaluated then result put on stack, function parameters each evaluated (as a sub-clause), results on stack, then the itself is function called, the result put on the stack, etc etc.
+
+(`TokenOperandFunctionCall` / `InstructionOperandFunctionCall` hold data from earlier in the parsing process about how many parameters they were called with.)
+
+Operators pop values off stack, evaluate, push result back onto stack in the usual fasion.
 
 In a correct epxression, at the end, there will be only one value left on the stack: the end result.
 
