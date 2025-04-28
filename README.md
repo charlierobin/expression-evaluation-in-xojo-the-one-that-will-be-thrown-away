@@ -82,6 +82,6 @@ Also, I want the result to come back with lots of other extra information: mainl
 
 I found a basic suite of test expressions which I've copied and pasted, plus a few extra of my own, and at the moment the results seem to come back correct. (At least the ones I’ve checked by pasting them in Google and seeing what their calculator returns.)
 
-![ideas](https://github.com/user-attachments/assets/8991dcdf-d381-414e-862b-d2443021f0c6)
+![ideas](https://github.com/user-attachments/assets/5d738044-4239-4f8b-87e6-dd7171bc98aa)
 
 PDF: [ideas.pdf](https://github.com/user-attachments/files/19930565/ideas.pdf)
