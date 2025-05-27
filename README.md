@@ -6,7 +6,7 @@ Intended for experimentation and then throwing away…
 
 Fred Brooks, The Mythical Man-Month (https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 
-(Or … Publish and be damned.)
+(Or … Publish and be damned?)
 
 I'm working on some apps which need to be able to tokenise, parse and evaluate Excel-type formulas/expressions.
 
