@@ -19,6 +19,7 @@ Inherits InstructionOperator
 		  return valueLeft <> valueRight
 		  
 		  
+		  
 		End Function
 	#tag EndMethod
 

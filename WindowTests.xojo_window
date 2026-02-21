@@ -69,6 +69,7 @@ Begin DesktopWindow WindowTests
       Underline       =   False
       Visible         =   True
       Width           =   934
+      _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
 End
